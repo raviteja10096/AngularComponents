@@ -1,0 +1,14 @@
+<div>
+<select  class="form-control" [ngModel]="selectedToAdd" multiple name="myselecttsms2" (ngModelChange)="chosenCars($event)">
+  <option *ngFor="let car of cars" [ngValue]="car">{{car.name}}</option>
+</select>
+</div>
+<button (click)="add()">Add</button>
+<button (click)="remove()">Remove</button>
+<div>
+<select   class="form-control" [ngModel]="selectedToRemove" multiple name="myselecttsms" (ngModelChange)="chosenCarsToRemove($event)">
+  <option *ngFor="let car of selectedCars" [ngValue]="car">{{car.name}}</option>
+</select>
+
+</div>
+
