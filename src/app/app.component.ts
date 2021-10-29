@@ -13,12 +13,12 @@ export class AppComponent  {
   selectedToRemove: any[] = [];
 
   chosenCars(event:any){
-   this.selectedToAdd = event[0].name;
+   this.selectedToAdd = event[0];
    console.log(event[0].name);
   }
 
   chosenCarsToRemove(event:any) {
-    this.selectedToRemove = event[0].name;
+    this.selectedToRemove = event[0];
     console.log(event[0].name);
   }
 
@@ -33,6 +33,7 @@ export class AppComponent  {
 
   remove() {
     this.cars = this.cars.concat(this.selectedToRemove);
+    console.log(this.cars);
     this.selectedCars = this.selectedCars.filter(selectedCar => {
       return this.cars.indexOf(selectedCar) < 0;
     });
