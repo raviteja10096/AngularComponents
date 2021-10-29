@@ -30,9 +30,26 @@ export class AppComponent  {
 
     this.selectedToAdd = [];
   }
+  addAll() {
+    this.selectedCars = this.cars;
+    this.cars = this.cars.filter(car => {
+      return this.selectedCars.indexOf(car) < 0;
+    });
+
+    this.selectedToAdd = [];
+  }
 
   remove() {
     this.cars = this.cars.concat(this.selectedToRemove);
+    console.log(this.cars);
+    this.selectedCars = this.selectedCars.filter(selectedCar => {
+      return this.cars.indexOf(selectedCar) < 0;
+    });
+    this.selectedToRemove = [];
+  }
+  removeAll() {
+    
+    this.cars = this.selectedCars;
     console.log(this.cars);
     this.selectedCars = this.selectedCars.filter(selectedCar => {
       return this.cars.indexOf(selectedCar) < 0;
